@@ -1,3 +1,6 @@
+//For numbers from 2 to a certain integer limit. 
+//Does not include 1 as it is not prime. 
+
 #include <iostream>
 #include <cmath>
 using namespace std;
