@@ -1,3 +1,7 @@
+//
+// Created by Ramasai Tadepalli on 7/29/17.
+//
+
 #include <iostream>
 #include <stack>
 #include <vector>
@@ -28,7 +32,9 @@ bool is_balanced(stack<char> input) {
     int one = 0, two = length - 1;
     bool result = true;
     while(two >= one) {
-        if((vec.at(one) == '(' && vec.at(two) != ')') || (vec.at(one) == ')' && vec.at(two) != '(')) {
+        if(((vec.at(one) == '(' && vec.at(two) != ')') || (vec.at(one) == ')' && vec.at(two) != '('))
+                || ((vec.at(one) == '[' && vec.at(two) != ']') || (vec.at(one) == ']' && vec.at(two) != '['))
+                || ((vec.at(one) == '{' && vec.at(two) != '}') || (vec.at(one) == '}' && vec.at(two) != '{'))) {
             result = false;
             break;
         }
@@ -37,3 +43,4 @@ bool is_balanced(stack<char> input) {
     }
     return result;
 }
+
