@@ -27,8 +27,11 @@ void dijkstra(int s) {
     for(int i = 0; i < graph[u].size(); i++) {
       int wt = graph[u][i].second;
       int v = graph[u][i].first;
-      relax(u, v, wt);
-      pq.push(make_pair(dist[v], v));
+      if(dist[v] > dist[u] + wt) {
+        pred[v] = u;
+        dist[v] = dist[u] + wt;
+        pq.push(make_pair(dist[v], v));
+      }
     }
   }
 }
